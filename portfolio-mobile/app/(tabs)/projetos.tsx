@@ -1,19 +1,20 @@
 import React from 'react';
 import { View, StyleSheet, FlatList, TouchableOpacity, Linking, ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
 import { Feather } from '@expo/vector-icons';
 
-// --- CORREÇÃO 1: Definir a "forma" de um item de projeto ---
+
+import { ThemedView } from "@/components/themed-view";
+import { ThemedText } from "@/components/themed-text";
+
+
 interface ProjectItem {
   title: string;
   description: string;
-  image: ImageSourcePropType; // Tipo correto para imagens do 'require'
+  image: ImageSourcePropType;
   repoLink: string;
 }
 
-// Aplicar o tipo ao seu array de dados
 const projectData: ProjectItem[] = [
   {
     title: 'FastRx',
@@ -31,7 +32,6 @@ const projectData: ProjectItem[] = [
 
 export default function ProjetosScreen() {
   
-  // --- CORREÇÃO 2: Dizer ao TypeScript o tipo do 'item' ---
   const renderProjectCard = ({ item }: { item: ProjectItem }) => (
     <ThemedView style={styles.card}>
       <Image source={item.image} style={styles.image} contentFit="cover" />
@@ -54,15 +54,13 @@ export default function ProjetosScreen() {
       <FlatList
         data={projectData}
         renderItem={renderProjectCard}
-        // --- CORREÇÃO 3: Adicionar o 'keyExtractor' ---
-        keyExtractor={(item) => item.title}
+        keyExtractor={(item) => item.title} 
         ListHeaderComponent={<ThemedText type="title" style={styles.title}>Projetos</ThemedText>}
       />
     </ThemedView>
   );
 }
 
-// Seus estilos (sem alteração)
 const styles = StyleSheet.create({
   container: {
     flex: 1,

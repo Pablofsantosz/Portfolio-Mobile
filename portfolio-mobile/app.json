@@ -4,7 +4,7 @@
     "slug": "portfolio-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/MinhaFoto.jpg",
     "scheme": "portfoliomobile",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
