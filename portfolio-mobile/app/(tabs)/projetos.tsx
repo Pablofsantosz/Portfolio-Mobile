@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, StyleSheet, FlatList, TouchableOpacity, Linking } from 'react-native';
+import { View, StyleSheet, FlatList, TouchableOpacity, Linking, ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { Feather } from '@expo/vector-icons';
 
+// --- CORREÇÃO 1: Definir a "forma" de um item de projeto ---
+interface ProjectItem {
+  title: string;
+  description: string;
+  image: ImageSourcePropType; // Tipo correto para imagens do 'require'
+  repoLink: string;
+}
 
-import { Feather } from '@expo/vector-icons'; 
-
-
-const projectData = [
+// Aplicar o tipo ao seu array de dados
+const projectData: ProjectItem[] = [
   {
     title: 'FastRx',
     description: 'Este projeto é um sistema web desenvolvido para gerar automaticamente receituários médicos...',
@@ -25,7 +31,8 @@ const projectData = [
 
 export default function ProjetosScreen() {
   
-  const renderProjectCard = ({ item }) => (
+  // --- CORREÇÃO 2: Dizer ao TypeScript o tipo do 'item' ---
+  const renderProjectCard = ({ item }: { item: ProjectItem }) => (
     <ThemedView style={styles.card}>
       <Image source={item.image} style={styles.image} contentFit="cover" />
       <View style={styles.cardContent}>
@@ -35,7 +42,6 @@ export default function ProjetosScreen() {
           style={styles.linkButton} 
           onPress={() => Linking.openURL(item.repoLink)}
         >
-          
           <Feather name="github" size={24} color="#0366d6" />
           <ThemedText style={styles.linkText}>Ver Repositório</ThemedText>
         </TouchableOpacity>
@@ -48,6 +54,7 @@ export default function ProjetosScreen() {
       <FlatList
         data={projectData}
         renderItem={renderProjectCard}
+        // --- CORREÇÃO 3: Adicionar o 'keyExtractor' ---
         keyExtractor={(item) => item.title}
         ListHeaderComponent={<ThemedText type="title" style={styles.title}>Projetos</ThemedText>}
       />
@@ -55,6 +62,7 @@ export default function ProjetosScreen() {
   );
 }
 
+// Seus estilos (sem alteração)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
