@@ -24,10 +24,10 @@ export default function HomeScreen() {
           <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Pablofsantosz')}>
             <Feather name="github" size={32} color="#0366d6" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/pablo-santos-325b8423a/')}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/pablo-felipe-557239266/')}>
             <Feather name="linkedin" size={32} color="#0077b5" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Linking.openURL('mailto:pablofelipedossantos@gmail.com')}>
+          <TouchableOpacity onPress={() => Linking.openURL('mailto:pabloletiane@gmail.com')}>
             <Feather name="mail" size={32} color="#c71610" />
           </TouchableOpacity>
         </View>
