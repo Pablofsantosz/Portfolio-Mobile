@@ -1,20 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { FaPython, FaReact, FaNodeJs, FaJava, FaGitAlt } from '@expo/vector-icons';
-import { SiJavascript, SiDjango } from '@expo/vector-icons';
-import { TbBrandCSharp } from '@expo/vector-icons';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 
+
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
+
+
 const skills = [
-  { name: 'Python', icon: <FaPython size={50} color="#4B8BBE" /> },
-  { name: 'C#', icon: <TbBrandCSharp size={50} color="#68217A" /> }, 
-  { name: 'JavaScript', icon: <SiJavascript size={50} color="#F0DB4F" /> },
-  { name: 'React', icon: <FaReact size={50} color="#61DAFB" /> },
-  { name: 'Node.js', icon: <FaNodeJs size={50} color="#68A063" /> },
-  { name: 'Django', icon: <SiDjango size={50} color="#092E20" /> },
-  { name: 'Java', icon: <FaJava size={50} color="#E52D2F" /> },
-  { name: 'Git', icon: <FaGitAlt size={50} color="#F05033" /> },
+  { name: 'Python', icon: <FontAwesome5 name="python" size={50} color="#4B8BBE" /> },
+  { name: 'C#', icon: <MaterialCommunityIcons name="language-csharp" size={50} color="#68217A" /> }, 
+  { name: 'JavaScript', icon: <FontAwesome5 name="js-square" size={50} color="#F0DB4F" /> },
+  { name: 'React', icon: <FontAwesome5 name="react" size={50} color="#61DAFB" /> },
+  { name: 'Node.js', icon: <FontAwesome5 name="node-js" size={50} color="#68A063" /> },
+  { name: 'Django', icon: <MaterialCommunityIcons name="django" size={50} color="#092E20" /> },
+  { name: 'Java', icon: <FontAwesome5 name="java" size={50} color="#E52D2F" /> },
+  { name: 'Git', icon: <FontAwesome5 name="git-alt" size={50} color="#F05033" /> },
 ];
 
 const appTechs = [
@@ -62,6 +65,8 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 20,
+    padding: 10,
+    borderRadius: 8,
   },
   description: {
     fontSize: 16,
@@ -81,7 +86,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 10,
     backgroundColor: '#f0f0f0', 
-    borderRadius: 8,
   },
   techItem: {
     fontSize: 16,

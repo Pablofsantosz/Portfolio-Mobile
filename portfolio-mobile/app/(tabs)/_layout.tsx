@@ -4,7 +4,11 @@ import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
 
-import { FontAwesome, Ionicons, MaterialIcons, Entypo, AntDesign } from '@expo/vector-icons'; 
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import AntDesign from '@expo/vector-icons/AntDesign';
+
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -14,12 +18,11 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        
       }}>
       
       {/* 1. Tela Home */}
       <Tabs.Screen
-        name="index" 
+        name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => (
@@ -41,7 +44,7 @@ export default function TabLayout() {
       
       {/* 3. Tela Experiência Acadêmica */}
       <Tabs.Screen
-        name="academica" 
+        name="academica"
         options={{
           title: 'Acadêmica',
           tabBarIcon: ({ color }) => (
@@ -74,7 +77,7 @@ export default function TabLayout() {
 
       {/* 6. Tela Jogo */}
       <Tabs.Screen
-        name="jogo" 
+        name="jogo"
         options={{
           title: 'Jogo',
           tabBarIcon: ({ color }) => (
