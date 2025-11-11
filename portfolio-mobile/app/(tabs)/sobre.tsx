@@ -20,7 +20,7 @@ const skills: Skill[] = [
   { name: 'JavaScript', icon: <FontAwesome5 name="js-square" size={50} color="#F0DB4F" /> },
   { name: 'React', icon: <FontAwesome5 name="react" size={50} color="#61DAFB" /> },
   { name: 'Node.js', icon: <FontAwesome5 name="node-js" size={50} color="#68A063" /> },
-  { name: 'Django', icon: <MaterialCommunityIcons name="web" size={50} color="#092E20" /> }, 
+  
   { name: 'Java', icon: <FontAwesome5 name="java" size={50} color="#E52D2F" /> },
   { name: 'Git', icon: <FontAwesome5 name="git-alt" size={50} color="#F05033" /> },
 ];
