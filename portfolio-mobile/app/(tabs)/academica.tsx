@@ -13,7 +13,7 @@ export default function AcademicaScreen() {
       <ThemedView style={styles.card}>
         <ThemedText type="defaultSemiBold">Ciência da Computação</ThemedText>
         <ThemedText style={styles.cardContent}>
-          - Cursando na [Sua Universidade Aqui]
+          - - Cursando na Universidade Católica de Pernambuco (UNICAP), previsão de conclusão em Dezembro de 2027.1.
         </ThemedText>
       </ThemedView>
 
