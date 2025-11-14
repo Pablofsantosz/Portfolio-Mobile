@@ -1,12 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, FlatList, TouchableOpacity, Linking, ImageSourcePropType } from 'react-native';
 import { Image } from 'expo-image';
+import { ThemedText } from '@/components/themed-text';
+import { ThemedView } from '@/components/themed-view';
 import { Feather } from '@expo/vector-icons';
-
-
-import { ThemedView } from "@/components/themed-view";
-import { ThemedText } from "@/components/themed-text";
-
 
 interface ProjectItem {
   title: string;
@@ -34,7 +31,12 @@ export default function ProjetosScreen() {
   
   const renderProjectCard = ({ item }: { item: ProjectItem }) => (
     <ThemedView style={styles.card}>
-      <Image source={item.image} style={styles.image} contentFit="cover" />
+      
+      <Image 
+        source={item.image} 
+        style={styles.image} 
+        contentFit="cover" 
+      />
       <View style={styles.cardContent}>
         <ThemedText type="subtitle">{item.title}</ThemedText>
         <ThemedText style={styles.description}>{item.description}</ThemedText>
@@ -80,7 +82,8 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 200, 
+    backgroundColor: '#eee', 
   },
   cardContent: {
     padding: 15,

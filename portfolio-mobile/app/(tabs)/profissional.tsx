@@ -9,8 +9,11 @@ export default function ProfissionalScreen() {
       <ThemedText type="title">Experiência Profissional</ThemedText>
       
       <ThemedText style={styles.content}>
-        - Nenhuma experiência profissional ainda.
+        Atualmente em busca da minha primeira oportunidade profissional.
       </ThemedText>
+      
+      
+
     </ThemedView>
   );
 }
@@ -23,5 +26,16 @@ const styles = StyleSheet.create({
   content: {
     marginTop: 20,
     fontSize: 16,
+    lineHeight: 24,
   },
+  card: {
+    borderRadius: 8,
+    padding: 15,
+    marginTop: 20,
+  },
+  cardContent: {
+    fontSize: 16,
+    marginTop: 5,
+    lineHeight: 22,
+  }
 });
